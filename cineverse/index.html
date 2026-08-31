@@ -1,12 +1,18 @@
 <!DOCTYPE html>
+<!-- تحدد لغة الصفحة واتجاه النص -->
 <html lang="ar" dir="rtl">
 <head>
+  <!-- ترميز النصوص العربية -->
   <meta charset="UTF-8">
+  <!-- يجعل الصفحة مناسبة لشاشات الهاتف -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- عنوان الصفحة في المتصفح -->
   <title>Cinevers | عالمك السينمائي</title>
+  <!-- ربط ملف CSS الرئيسي -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- رأس الموقع -->
   <header class="site-header">
     <a class="logo" href="index.html">Cinevers<span>.</span></a>
     <nav class="main-nav" aria-label="التنقل الرئيسي">
@@ -17,32 +23,14 @@
     <a class="header-button" href="login.html">تسجيل الدخول</a>
   </header>
 
+  <!-- المحتوى الرئيسي -->
   <main>
+    <!-- سلايدر الأفلام المميزة -->
     <section class="hero-slider" aria-label="أفلام مميزة">
-      <article class="slide slide-one active">
-        <div class="hero-content">
-          <p class="eyebrow">اختيار الأسبوع</p>
-          <h1>رحلة جديدة تبدأ من الشاشة</h1>
-          <p>اكتشف أفلامًا ومسلسلات مختارة في مكان واحد.</p>
-          <a class="primary-button" href="browse.html">استكشف الآن</a>
-        </div>
-      </article>
-      <article class="slide slide-two">
-        <div class="hero-content">
-          <p class="eyebrow">مسلسلات تستحق المشاهدة</p>
-          <h1>قصص تبقى في الذاكرة</h1>
-          <p>اختر ما يناسب مزاجك وابدأ رحلة المشاهدة.</p>
-          <a class="primary-button" href="browse.html">شاهد القائمة</a>
-        </div>
-      </article>
-      <article class="slide slide-three">
-        <div class="hero-content">
-          <p class="eyebrow">الأعلى تقييمًا</p>
-          <h1>كل لقطة تحكي حكاية</h1>
-          <p>تعرّف على أعمال مميزة مع وصف وتقييم سريع.</p>
-          <a class="primary-button" href="browse.html">ابدأ البحث</a>
-        </div>
-      </article>
+      <article class="slide slide-one active"><div class="hero-content"><p class="eyebrow">اختيار الأسبوع</p><h1>رحلة جديدة تبدأ من الشاشة</h1><p>اكتشف أفلامًا ومسلسلات مختارة في مكان واحد.</p><a class="primary-button" href="browse.html">استكشف الآن</a></div></article>
+      <article class="slide slide-two"><div class="hero-content"><p class="eyebrow">مسلسلات تستحق المشاهدة</p><h1>قصص تبقى في الذاكرة</h1><p>اختر ما يناسب مزاجك وابدأ رحلة المشاهدة.</p><a class="primary-button" href="browse.html">شاهد القائمة</a></div></article>
+      <article class="slide slide-three"><div class="hero-content"><p class="eyebrow">الأعلى تقييمًا</p><h1>كل لقطة تحكي حكاية</h1><p>تعرّف على أعمال مميزة مع وصف وتقييم سريع.</p><a class="primary-button" href="browse.html">ابدأ البحث</a></div></article>
+      <!-- أزرار الانتقال بين الشرائح -->
       <div class="slider-controls">
         <button class="slider-dot active" data-slide="0" aria-label="الشريحة الأولى"></button>
         <button class="slider-dot" data-slide="1" aria-label="الشريحة الثانية"></button>
@@ -50,39 +38,25 @@
       </div>
     </section>
 
-    <section class="intro-section container">
-      <p class="section-label">ماذا نقدم؟</p>
-      <h2>اقتراحات بسيطة لعشاق الأفلام والمسلسلات</h2>
-      <p>Cinevers موقع بسيط يساعدك على استعراض أعمال متنوعة، معرفة تقييمها، وقراءة نبذة سريعة عنها قبل اختيار ما ستشاهده.</p>
-    </section>
+    <!-- مقدمة الموقع -->
+    <section class="intro-section container"><p class="section-label">ماذا نقدم؟</p><h2>اقتراحات بسيطة لعشاق الأفلام والمسلسلات</h2><p>Cinevers موقع بسيط يساعدك على استعراض أعمال متنوعة، معرفة تقييمها، وقراءة نبذة سريعة عنها قبل اختيار ما ستشاهده.</p></section>
 
-    <section class="feature-section container">
-      <div class="feature-icon">▶</div>
-      <div>
-        <p class="section-label">الميزة الرئيسية</p>
-        <h2>ابحث، استكشف، ثم تعرّف على التفاصيل</h2>
-        <p>يعرض الموقع بطاقات واضحة للأعمال، مع بحث سريع وصفحة تفاصيل مستقلة لكل عمل.</p>
-      </div>
-    </section>
+    <!-- الميزة الرئيسية -->
+    <section class="feature-section container"><div class="feature-icon">▶</div><div><p class="section-label">الميزة الرئيسية</p><h2>ابحث، استكشف، ثم تعرّف على التفاصيل</h2><p>يعرض الموقع بطاقات واضحة للأعمال، مع بحث سريع وصفحة تفاصيل مستقلة لكل عمل.</p></div></section>
 
-    <section class="about-section container" id="about">
-      <p class="section-label">عن Cinevers</p>
-      <h2>مكان صغير لقصص كبيرة</h2>
-      <p>صُمم Cinevers ليكون سهل الاستخدام: واجهة مرتبة، ألوان سينمائية هادئة، ومعلومات أساسية تصل إليك دون تعقيد.</p>
-    </section>
+    <!-- معلومات عن الموقع -->
+    <section class="about-section container" id="about"><p class="section-label">عن Cinevers</p><h2>مكان صغير لقصص كبيرة</h2><p>صُمم Cinevers ليكون سهل الاستخدام: واجهة مرتبة، ألوان سينمائية هادئة، ومعلومات أساسية تصل إليك دون تعقيد.</p></section>
   </main>
 
+  <!-- تذييل الموقع -->
   <footer class="site-footer">
-    <div>
-      <a class="logo" href="index.html">Cinevers<span>.</span></a>
-      <p>اكتشف قصتك التالية.</p>
-    </div>
+    <div><a class="logo" href="index.html">Cinevers<span>.</span></a><p>اكتشف قصتك التالية.</p></div>
     <div class="footer-contact"><p>تواصل معنا: hello@cinevers.com</p><p>الرياض، المملكة العربية السعودية</p></div>
-    <div class="social-links" aria-label="حسابات التواصل الاجتماعي">
-      <a href="#" aria-label="فيسبوك">f</a><a href="#" aria-label="يوتيوب">▶</a><a href="#" aria-label="إنستغرام">◎</a>
-    </div>
+    <div class="social-links" aria-label="حسابات التواصل الاجتماعي"><a href="#" aria-label="فيسبوك">f</a><a href="#" aria-label="يوتيوب">▶</a><a href="#" aria-label="إنستغرام">◎</a></div>
     <p class="copyright">© 2026 Cinevers. جميع الحقوق محفوظة.</p>
   </footer>
+
+  <!-- ربط ملف JavaScript -->
   <script src="js/script.js"></script>
 </body>
 </html>
