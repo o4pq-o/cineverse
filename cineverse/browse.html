@@ -1,15 +1,21 @@
 <!DOCTYPE html>
+<!-- صفحة استعراض الأفلام -->
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>استكشف | Cinevers</title><link rel="stylesheet" href="css/style.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استكشف | Cinevers</title>
+  <!-- ملف التنسيق -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
+  <!-- رأس الموقع -->
   <header class="site-header"><a class="logo" href="index.html">Cinevers<span>.</span></a><nav class="main-nav" aria-label="التنقل الرئيسي"><a href="index.html">الرئيسية</a><a class="active" href="browse.html">استكشف</a><a href="index.html#about">عن الموقع</a></nav><a class="header-button" href="login.html">تسجيل الدخول</a></header>
-  <main class="browse-page container">
-    <div class="page-heading"><p class="section-label">مكتبة Cinevers</p><h1>أفلام ومسلسلات مختارة</h1><p>ابحث عن عملك المفضل أو استعرض القائمة.</p></div>
-    <label class="search-box" for="search-input"><span>⌕</span><input id="search-input" type="search" placeholder="ابحث بالاسم..." autocomplete="off"></label>
-    <p class="results-message" id="results-message"></p>
-    <section class="cards-grid" id="cards-grid" aria-label="قائمة الأعمال"></section>
-  </main>
+  <!-- محتوى البحث والبطاقات -->
+  <main class="browse-page container"><div class="page-heading"><p class="section-label">مكتبة Cinevers</p><h1>أفلام ومسلسلات مختارة</h1><p>ابحث عن عملك المفضل أو استعرض القائمة.</p></div><label class="search-box" for="search-input"><span>⌕</span><input id="search-input" type="search" placeholder="ابحث بالاسم..." autocomplete="off"></label><p class="results-message" id="results-message"></p><!-- JavaScript يضيف البطاقات هنا --><section class="cards-grid" id="cards-grid" aria-label="قائمة الأعمال"></section></main>
+  <!-- تذييل الموقع -->
   <footer class="site-footer"><div><a class="logo" href="index.html">Cinevers<span>.</span></a><p>اكتشف قصتك التالية.</p></div><div class="footer-contact"><p>تواصل معنا: hello@cinevers.com</p><p>الرياض، المملكة العربية السعودية</p></div><div class="social-links" aria-label="حسابات التواصل الاجتماعي"><a href="#" aria-label="فيسبوك">f</a><a href="#" aria-label="يوتيوب">▶</a><a href="#" aria-label="إنستغرام">◎</a></div><p class="copyright">© 2026 Cinevers. جميع الحقوق محفوظة.</p></footer>
+  <!-- ملف JavaScript -->
   <script src="js/script.js"></script>
 </body>
 </html>
