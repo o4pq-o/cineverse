@@ -1,32 +1,100 @@
 /* CINEVERSE - Beginner-friendly CSS */
 
+/*
+تعريف خط خاص بالمشروع.
+font-family يعطي الخط اسمًا يمكن استخدامه لاحقًا داخل CSS.
+src يحدد مكان ملف الخط داخل المشروع. استخدام خط محلي يجعل شكل الموقع ثابتًا دون الاعتماد على مكتبة خطوط خارجية.
+*/
 @font-face {
     font-family: "CineversFont";
     src: url("../assets/fonts/CineversFont.ttf");
 }
 
+/*
+النجمة * تعني جميع عناصر الصفحة.
+box-sizing: border-box يجعل العرض والارتفاع يشملان padding و border، لذلك تصبح حسابات أحجام العناصر أسهل وأكثر استقرارًا.
+*/
 * { box-sizing: border-box; }
+/*
+scroll-behavior: smooth يجعل الانتقال إلى الروابط الداخلية مثل #about انتقالًا تدريجيًا بدل القفز المفاجئ.
+*/
 html { scroll-behavior: smooth; }
+/*
+تنسيق الجسم الرئيسي للصفحة.
+margin: 0 يزيل المسافة الافتراضية حول الصفحة.
+background-color يحدد الخلفية الداكنة.
+color يحدد لون النص الافتراضي.
+font-family يحدد الخط مع بدائل احتياطية.
+line-height يزيد المسافة بين الأسطر لتسهيل القراءة.
+*/
 body { margin: 0; background-color: #11131d; color: #f7f7fb; font-family: "CineversFont", Tahoma, Arial, sans-serif; line-height: 1.8; }
+/*
+تنسيق الروابط بشكل عام.
+color: inherit يجعل الرابط يرث لون العنصر الأب.
+text-decoration: none يزيل الخط السفلي الافتراضي حتى يتحكم التصميم بمظهر الرابط.
+*/
 a { color: inherit; text-decoration: none; }
+/*
+يجعل الأزرار وحقول الإدخال تستخدم نفس خط الموقع للحفاظ على هوية بصرية موحدة.
+*/
 button, input { font-family: inherit; }
 
 /* Main content container */
+/*
+حاوية عامة يعاد استخدامها في عدة صفحات، لذلك استخدمنا Class وليس ID.
+width: 90% يجعل المحتوى يأخذ معظم الشاشة مع ترك هوامش جانبية.
+max-width يمنع المحتوى من التمدد أكثر من اللازم على الشاشات الكبيرة.
+margin-left/right: auto يضعان الحاوية في منتصف الصفحة.
+*/
 .container { width: 90%; max-width: 1120px; margin-left: auto; margin-right: auto; }
 
 /* Header */
+/*
+رأس الموقع العلوي.
+display: flex يستخدم Flexbox لترتيب الشعار والتنقل والزر في صف واحد.
+align-items: center يوسّط العناصر عموديًا.
+justify-content: space-between يوزع العناصر على عرض الرأس.
+gap يضيف مسافة آمنة بين العناصر.
+*/
 .site-header { min-height: 76px; padding-left: 5%; padding-right: 5%; display: flex; align-items: center; justify-content: space-between; gap: 20px; background-color: #141622; border-bottom: 1px solid rgba(255,255,255,0.12); }
+/*
+تنسيق شعار الموقع. direction: ltr يحافظ على اتجاه اسم Cinevers الإنجليزي.
+font-size وfont-weight يبرزان الشعار، وletter-spacing يضيف مسافة بسيطة بين الحروف.
+*/
 .logo { direction: ltr; font-size: 1.55rem; font-weight: bold; letter-spacing: 0.5px; }
 .logo span { color: #ffb703; }
+/*
+يستخدم Flexbox لترتيب روابط التنقل بجانب بعضها، وgap يحدد المسافة بينها.
+*/
 .main-nav { display: flex; gap: 25px; }
+/*
+تنسيق كل رابط داخل شريط التنقل. padding يزيد مساحة النقر، وborder شفاف يحجز مكان خط التحديد حتى لا يتحرك التصميم عند تفعيل الرابط.
+*/
 .main-nav a { color: #b9bdca; padding-top: 24px; padding-bottom: 18px; border-bottom: 3px solid transparent; }
 .main-nav a:hover, .main-nav .active { color: #f7f7fb; border-bottom-color: #ffb703; }
+/*
+تنسيق مشترك للأزرار الرئيسية. تجميع الـ Classes يقلل تكرار الكود.
+display: inline-block يسمح بتطبيق padding بشكل واضح على الرابط أو الزر.
+border-radius يجعل الزوايا مستديرة، وcursor: pointer يوضح أن العنصر قابل للنقر.
+*/
 .header-button, .primary-button { display: inline-block; background-color: #ffb703; color: #17120a; padding: 9px 18px; border: none; border-radius: 7px; cursor: pointer; font-weight: bold; }
 .header-button:hover, .primary-button:hover { background-color: #e69c00; }
 
 /* Home slider */
+/*
+حاوية السلايدر الرئيسية.
+position: relative يجعل العناصر ذات position: absolute داخلها تتموضع بالنسبة إليها.
+overflow: hidden يخفي أي جزء يخرج خارج حدود السلايدر.
+*/
 .hero-slider { height: 485px; position: relative; overflow: hidden; }
+/*
+كل slide تمثل شريحة واحدة. display: none يخفيها افتراضيًا، ثم تضيف JavaScript class active للشريحة المطلوبة.
+background-size: cover يجعل الخلفية تغطي المساحة، وbackground-position: center يركزها.
+*/
 .slide { width: 100%; height: 100%; display: none; align-items: center; padding-left: 5%; padding-right: 5%; background-size: cover; background-position: center; }
+/*
+عند إضافة active تصبح الشريحة Flexbox حتى تظهر محتوياتها وتتم محاذاتها عموديًا.
+*/
 .slide.active { display: flex; }
 .slide-one { background-image: linear-gradient(90deg, rgba(13,14,23,0.96) 15%, rgba(13,14,23,0.55) 60%, rgba(13,14,23,0.25)), radial-gradient(circle at 75% 35%, #7255a5, #252a57 35%, #121420 72%); }
 .slide-two { background-image: linear-gradient(90deg, rgba(13,14,23,0.96) 15%, rgba(13,14,23,0.55) 60%, rgba(13,14,23,0.25)), radial-gradient(circle at 75% 35%, #e85b56, #67334b 37%, #151522 72%); }
@@ -35,6 +103,10 @@ button, input { font-family: inherit; }
 .eyebrow, .section-label { margin-top: 0; color: #ffb703; font-size: 0.9rem; font-weight: bold; }
 .hero-content h1 { margin-top: 8px; margin-bottom: 16px; font-size: 4rem; line-height: 1.2; }
 .hero-content p:not(.eyebrow) { margin-top: 0; margin-bottom: 25px; color: #e3e4eb; font-size: 1.05rem; }
+/*
+position: absolute يضع أزرار التحكم فوق السلايدر دون أن تؤثر على ترتيب المحتوى.
+right وbottom يحددان مكانها، وFlexbox يرتب النقاط بجانب بعضها.
+*/
 .slider-controls { position: absolute; right: 5%; bottom: 27px; display: flex; gap: 9px; }
 .slider-dot { width: 11px; height: 11px; padding: 0; background-color: rgba(255,255,255,0.46); border: none; border-radius: 50%; cursor: pointer; }
 .slider-dot.active { background-color: #ffb703; }
@@ -58,10 +130,29 @@ h1, h2, p { margin-top: 0; }
 .search-box span { font-size: 1.4rem; color: #ffb703; }
 .search-box input { width: 100%; padding-top: 14px; padding-bottom: 14px; background-color: transparent; color: #f7f7fb; border: none; outline: none; }
 .results-message { min-height: 29px; text-align: center; color: #b9bdca; }
+/*
+هذه الحاوية تستخدم CSS Grid لأن البطاقات تحتاج إلى صفوف وأعمدة.
+grid-template-columns: repeat(3, 1fr) ينشئ ثلاثة أعمدة متساوية.
+fr تعني جزءًا من المساحة المتاحة، وgap يحدد المسافة بين البطاقات.
+*/
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .movie-card { overflow: hidden; background-color: #1b1e2b; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; }
+/*
+position: relative يجعل الصورة المطلقة العنوان يتموضعان داخل الملصق نفسه.
+display: flex مع align-items: flex-end يضع عنوان الملصق في أسفله.
+overflow: hidden يمنع الصورة من تجاوز حدود البطاقة.
+*/
 .movie-poster { min-height: 220px; position: relative; display: flex; align-items: flex-end; overflow: hidden; color: white; background-color: #24243a; }
+/*
+position: absolute مع top/right/bottom/left = 0 يجعل الصورة تغطي كامل الحاوية.
+object-fit: cover يحافظ على نسبة أبعاد الصورة مع تغطية المساحة حتى لو تم قص الأطراف.
+*/
 .movie-poster img { width: 100%; height: 100%; position: absolute; top: 0; right: 0; bottom: 0; left: 0; object-fit: cover; }
+/*
+z-index: 1 يجعل العنوان يظهر فوق الصورة.
+background-image يضيف تدرجًا داكنًا خلف النص لزيادة وضوحه.
+text-shadow يضيف ظلًا للنص فوق الخلفية.
+*/
 .poster-title { position: relative; z-index: 1; width: 100%; padding: 18px; font-size: 1.8rem; line-height: 1.25; font-weight: bold; background-image: linear-gradient(transparent, rgba(0,0,0,0.75)); text-shadow: 0 2px 8px #000; }
 .card-body { padding: 18px; }
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
@@ -73,22 +164,37 @@ h1, h2, p { margin-top: 0; }
 
 /* Details page */
 .details-page { min-height: 620px; padding-top: 70px; padding-bottom: 70px; }
+/*
+Grid يقسم صفحة التفاصيل إلى عمود للملصق وعمود للمعلومات.
+320px يحدد عرض الملصق و1fr يعطي بقية المساحة للمعلومات.
+*/
 .details-content { display: grid; grid-template-columns: 320px 1fr; gap: 45px; align-items: flex-start; }
 .details-poster { height: 420px; position: relative; display: flex; align-items: flex-end; overflow: hidden; border-radius: 12px; background-color: #24243a; }
 .details-poster img { width: 100%; height: 100%; position: absolute; top: 0; right: 0; bottom: 0; left: 0; object-fit: cover; }
 .details-poster h1 { position: relative; z-index: 1; width: 100%; padding: 28px; margin: 0; font-size: 2.3rem; line-height: 1.3; background-image: linear-gradient(transparent, rgba(0,0,0,0.8)); }
 .details-info h1 { margin-top: 8px; margin-bottom: 8px; font-size: 2.3rem; }
 .details-info p { color: #b9bdca; }
+/*
+Flexbox يرتب بيانات الفيلم بجانب بعضها.
+flex-wrap: wrap يسمح بنقل العناصر إلى سطر جديد إذا لم تتسع الشاشة.
+*/
 .details-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; margin-bottom: 20px; }
 .details-meta span { padding: 5px 11px; background-color: #282c3c; border-radius: 20px; color: #e5e6eb; font-size: 0.9rem; }
 .back-link { color: #ffb703; font-weight: bold; }
 .not-found { padding-top: 80px; padding-bottom: 80px; text-align: center; }
 
 /* Login and signup */
+/*
+Flexbox يستخدم هنا لتوسيط بطاقة الحساب داخل المساحة المتاحة.
+justify-content يوسّط أفقيًا وalign-items يوسّط عموديًا.
+*/
 .account-main { min-height: 600px; padding: 65px 20px; display: flex; align-items: center; justify-content: center; background-image: radial-gradient(circle at top, #2d2944, #11131d 55%); }
 .account-card { width: 100%; max-width: 470px; padding: 37px; background-color: #1b1e2b; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; }
 .account-card h1 { margin-top: 8px; margin-bottom: 8px; }
 .account-card > p:not(.section-label) { color: #b9bdca; }
+/*
+Grid يرتب حقول النموذج كسطور متتالية، وgap يضيف مسافة منتظمة بينها.
+*/
 .account-form { display: grid; gap: 17px; margin-top: 27px; }
 .account-form label { display: grid; gap: 7px; font-size: 0.92rem; }
 .account-form input { padding: 12px; background-color: #12141e; color: #f7f7fb; border: 1px solid #3b4053; border-radius: 6px; outline-color: #ffb703; }
@@ -97,6 +203,10 @@ h1, h2, p { margin-top: 0; }
 .form-note a { color: #ffb703; }
 
 /* Footer */
+/*
+CSS Grid ينظم التذييل في عدة أعمدة.
+القيم 1.2fr و1.4fr وauto توزع المساحة بحسب أهمية وحجم المحتوى.
+*/
 .site-footer { padding: 42px 5% 20px 5%; display: grid; grid-template-columns: 1.2fr 1.4fr auto; gap: 28px; background-color: #0c0d14; border-top: 1px solid rgba(255,255,255,0.12); }
 .site-footer p { margin-top: 5px; margin-bottom: 5px; color: #b9bdca; font-size: 0.88rem; }
 .social-links { display: flex; align-items: center; gap: 9px; }
@@ -105,6 +215,10 @@ h1, h2, p { margin-top: 0; }
 .copyright { grid-column: 1 / -1; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.12); text-align: center; }
 
 /* Mobile layout */
+/*
+تصميم Responsive للهواتف.
+تعمل هذه القواعد عندما يكون عرض الشاشة 700px أو أقل، وتغير ترتيب العناصر لتصبح أسهل للقراءة واللمس.
+*/
 @media (max-width: 700px) {
     .site-header { padding-top: 15px; padding-bottom: 15px; flex-wrap: wrap; }
     .main-nav { width: 100%; order: 3; justify-content: center; gap: 20px; }
